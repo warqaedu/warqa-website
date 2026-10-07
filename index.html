@@ -262,6 +262,64 @@ p { margin: 0; }
   .brand img { height: 54px; }
   .header-row { min-height: 68px; }
 }
+@media (max-width: 768px) {
+  :root { --gutter: 18px; --fold: 24px; }
+  body { font-size: 16px; line-height: 1.75; }
+  .section { padding-block: 52px; }
+  .eyebrow { font-size: 13px; gap: 8px; }
+  .eyebrow::before { width: 20px; }
+  .section-head { gap: 10px; margin-bottom: 28px; }
+  .section-head h2, .about-grid h2 { font-size: 25px; line-height: 1.4; }
+  .section-head p { font-size: 15.5px; }
+  .btn { font-size: 15px; padding: 12px 22px; }
+  .site-header .header-row { min-height: 62px; gap: 12px; }
+  .brand img { height: 48px; }
+  .header-cta { padding: 8px 16px; font-size: 14px; }
+  .hero { padding-block: 34px 44px; }
+  .hero-grid { gap: 28px; }
+  .hero-copy { gap: 16px; }
+  .hero h1 { font-size: 30px; line-height: 1.35; }
+  .hero p.lead { font-size: 16px; }
+  .hero-actions { gap: 10px; width: 100%; }
+  .stack { max-width: 290px; }
+  .chip { font-size: 12px; padding: 6px 12px; }
+  .about-grid { gap: 22px; }
+  .about-body { font-size: 16px; gap: 14px; }
+  .audience span { font-size: 13px; padding: 6px 13px; }
+  .svc-grid { grid-template-columns: 1fr; gap: 16px; }
+  .svc { padding: 26px 22px; gap: 14px; }
+  .svc h3 { font-size: 19px; }
+  .svc ul { font-size: 15.5px; gap: 10px; }
+  .ico { width: 50px; height: 50px; border-radius: 12px; }
+  .ico svg { width: 24px; height: 24px; }
+  .filters { gap: 8px; margin-bottom: 20px; }
+  .filter { font-size: 13.5px; padding: 8px 15px; }
+  .masonry { column-gap: 12px; }
+  .work { margin-bottom: 12px; }
+  .lightbox { padding: 12px; }
+  .why-grid { grid-template-columns: 1fr; gap: 14px; }
+  .why { padding: 24px 22px; gap: 10px; }
+  .why h3 { font-size: 20px; }
+  .why p { font-size: 15.5px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+  .form-card { padding: 26px 20px; gap: 16px; }
+  .form-card h3, .channels > h3 { font-size: 20px; }
+  .field label { font-size: 14px; }
+  .field textarea { min-height: 110px; }
+  .channels { gap: 12px; }
+  .channel { padding: 16px 18px; gap: 14px; }
+  .channel-text b { font-size: 17px; }
+  .channel-text small { font-size: 13.5px; }
+  .site-footer { padding-block: 28px; }
+  .footer-row { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+  .footer-row img { height: 58px; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 10px 20px; }
+}
+@media (max-width: 768px) and (hover: none) {
+  .work-cap { opacity: 1; transform: none; padding: 30px 14px 12px; }
+  .work-cap b { font-size: 14.5px; }
+  .work-cap small { font-size: 12px; }
+}
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .why-grid { grid-template-columns: 1fr; }
@@ -300,7 +358,7 @@ p { margin: 0; }
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">منصة إبداعية متكاملة</span>
-      <h1>فكرتك من <span class="accent">ورقة</span>، الى واقع</h1>
+      <h1>فكرتك من <span class="accent">ورقة</span>، الى واقع ملموس</h1>
       <p class="lead">ورقة تجمع تنسيق الأبحاث والعروض، ومونتاج المحتوى، وتصميم هوية المتاجر في مكان واحد. ندقق في التفاصيل مثل الأكاديمي، ونصمم بلمسة فنية معاصرة.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">اطلب خدمتك الآن
@@ -465,7 +523,7 @@ p { margin: 0; }
         <h3>نموذج طلب الخدمة</h3>
         <input type="hidden" name="apiKey" value="sf_6c7dd9fa47d11d92ccd8fb0d">
         <input type="hidden" name="subject" value="طلب خدمة جديد من موقع ورقة">
-        <input type="hidden" name="redirect" value="thank-you.html">
+        <input type="hidden" name="redirectTo" id="redirectTo" value="thank-you.html">
 
         <div class="field">
           <label for="f-name">الاسم الكامل *</label>
@@ -492,6 +550,9 @@ p { margin: 0; }
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
         </button>
         <p class="form-note">سنصلك الرد على بريدك الإلكتروني. للاستعجال تواصل معنا مباشرة من القنوات المجاورة.</p>
+        <script>
+          document.getElementById('redirectTo').value = new URL('thank-you.html', window.location.href).href;
+        </script>
       </form>
 
       <div class="channels">
